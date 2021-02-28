@@ -1,0 +1,16 @@
+{
+  "sessions": [
+    {
+      "name": "Javascript",
+      "instructor": "Rahul",
+      "description": "learned about javascript and all the functionalities",
+      "id": 2
+    },
+    {
+      "name": "Java Fundamentals",
+      "instructor": "Nishnat",
+      "description": "learned about basic java",
+      "id": 3
+    }
+  ]
+}

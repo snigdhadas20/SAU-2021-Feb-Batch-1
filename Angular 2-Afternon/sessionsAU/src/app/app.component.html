@@ -1,0 +1,41 @@
+<head><h1>AU Sessions</h1></head>
+
+<div class="container">
+  <form #myForm="ngForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Session Name</label>
+      <input type="email" class="form-control" name="name" aria-describedby="emailHelp" [(ngModel)]="sessionObj.name"> 
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Instructor Name</label>
+      <input type="email" class="form-control"  name="instructor" aria-describedby="emailHelp" [(ngModel)]="sessionObj.instructor">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Description</label>
+        <input type="email" class="form-control" name="description" aria-describedby="emailHelp" [(ngModel)]="sessionObj.description"> 
+      </div>
+    </div>
+    
+    
+    <button type="submit" class="button" (click)="addDetails(myForm.value)" *ngIf="!isEdit">Submit</button>
+    <button type="button" class="btn btn-info" *ngIf="isEdit" (click)="updateSession()">Update</button>
+  </form>
+  <br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Session Name</th>
+        <th scope="col">Instructor</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let session of allSession">
+        <td>{{session.name}}</td>
+        <td>{{session.instructor}}</td>
+        <td>{{session.description}}</td>
+        <td><button (click)="editSession(session)" class="btn btn-warning">Edit</button></td>
+        <td><button (click)="deleteSession(session)" class="btn btn-danger">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
